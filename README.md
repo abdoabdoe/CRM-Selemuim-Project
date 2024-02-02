@@ -1,34 +1,47 @@
-1. fileSheet Class
-This class is responsible for reading data from an Excel file using Apache POI library and storing it in a 2D array. Here's a summary:
+Automated Testing and Data Handling Documentation
+Introduction
+The provided Java code represents a testing framework for a web application using Selenium and TestNG. It includes functionality for handling Excel sheets using Apache POI, capturing screenshots, and performing automated login tests on the FreeCRM web application.
 
-Methods:
-main(String[] args): The main method reads data from an Excel file, specifically from the "ContactPage" sheet. It prints the value of a cell and stores the data in a 2D array.
-2. homePage Class
-This class is related to automated testing using Selenium for a web application. It performs actions such as logging in, taking screenshots, and navigating to different pages. Here's a summary:
+1. Class: fileSheet
+Purpose
+The fileSheet class is responsible for reading data from an Excel file and storing it in a 2D array.
 
-Fields:
+Methods
+main(String[] args): Reads data from an Excel file, prints the value of a cell, and stores data in a 2D array.
+Usage
+Provide the correct file path in the File object.
+The main method reads data from the Excel file specified in the Sheet named "ContactPage."
+It prints the value of a cell (family name) and stores the entire sheet data in a 2D array.
+2. Class: homePage
+Purpose
+The homePage class focuses on automated testing of the FreeCRM web application using Selenium and TestNG.
 
-driver: An instance of the WebDriver (ChromeDriver).
-Methods:
+Methods
+login(): Sets up the WebDriver, logs into FreeCRM, takes a screenshot, and saves it to a file.
+tearDown(): Closes the WebDriver after test execution.
+clickContactTests(): Switches to the "Contacts" section of the application.
+clickdealsTests(): Switches to the "Deals" section of the application.
+clickTasksTests(): Switches to the "Tasks" section, enters keywords and company name for an extended search.
+Usage
+The login method opens FreeCRM, logs in with predefined credentials, and captures a screenshot.
+Three test methods (clickContactTests, clickdealsTests, clickTasksTests) perform specific actions within the FreeCRM application.
+3. Class: login
+Purpose
+The login class contains TestNG test cases for login functionality, URL verification, logo display, and parameterized login tests.
 
-login(): Logs into a web application, maximizes the window, and takes a screenshot.
-tearDown(): Quits the WebDriver after the test.
-clickContactTests(), clickdealsTests(), clickTasksTests(): Methods that switch to the "mainpanel" frame and perform various actions on the web application.
-3. login Class
-This class contains test cases for login functionality using TestNG. It checks the title, URL, logo, and performs login tests with data providers.
-
-Fields:
-
-driver: An instance of the WebDriver (ChromeDriver).
-Methods:
-
+Methods
 setUp(): Initializes the WebDriver before each test.
-tearDown(): Quits the WebDriver after each test.
-litleTest(), urlCheck(), logoTest(): Test methods that check the title, URL, and logo visibility.
-Logintest(String username, String password): Test method that performs a login test using data from a data provider.
-mydata(): Provides data for the data-driven tests.
-Note:
-The code structure is well-organized into different classes with distinct responsibilities.
-It's recommended to add comments within the code to explain complex logic or provide additional details for future reference.
-Consider providing more meaningful names for variables and methods to enhance code readability.
-Feel free to let me know if you need more specific details or if you have any additional requirements for the documentation.
+tearDown(): Closes the WebDriver after each test.
+litleTest(): Verifies the title of the login screen.
+urlCheck(): Verifies the URL of the login screen.
+logoTest(): Verifies the display of the CRM logo.
+Logintest(String username, String password): Performs login tests with different username and password combinations.
+Data Provider
+mydata(): Provides data for parameterized login tests.
+Conclusion
+This Java testing framework integrates Selenium, TestNG, and Apache POI to automate login tests for the FreeCRM web application. It includes functionalities for Excel data handling, capturing screenshots, and parameterized testing. The provided test classes cover various aspects of the application, ensuring robust automated testing capabilities.
+
+
+
+
+
